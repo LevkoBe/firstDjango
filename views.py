@@ -5,5 +5,6 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 import json
 
+
 def sendHTML(request):
-    return render(request, 'index.html', {'items': [{'name': 'Thomas'}, {'name': 'John'}]})
+    return render(request, 'home.html', {'items': [{'name': 'Thomas'}, {'name': 'John'}]})

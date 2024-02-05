@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from firstDjango import views
+import views
 
 urlpatterns = [
     path("", views.sendHTML),
     path('admin/', admin.site.urls),
     path('playground/', include('playground.urls')),
+    path('hw6/', include('HW6Entities.urls')),
 ]

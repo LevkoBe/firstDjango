@@ -39,7 +39,7 @@ def handleCrud(request):
 
 
 def sendHTML(request):
-    return render(request, 'index.html', {'items': [{'name': 'Thomas'}, {'name': 'John'}]})
+    return render(request, 'home.html', {'items': [{'name': 'Thomas'}, {'name': 'John'}]})
 
 
 def sendIMG(request):
@@ -57,6 +57,7 @@ def sayHello(request):
 def set_cookie(request):
     response = HttpResponse("Cookie set!")
     response.set_cookie('my_cookie', 'Hello from server!', max_age=100000000, httponly=False)
+    response.set_cookie('blocked_cookie', 'Hello from server!', max_age=100000000, httponly=True)
     return response
 
 

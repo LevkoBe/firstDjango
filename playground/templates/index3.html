@@ -1,0 +1,19 @@
+<!-- main_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Main Page</h1>
+    <p>Welcome to the main page. Explore the API endpoints:</p>
+
+    <ul>
+        <li><a href="{% url 'main_page' %}">Main Page</a></li>
+        <li><a href="{% url 'task_list' %}">List of Tasks</a></li>
+        <li><a href="{% url 'specific_task' id=1 %}">Task Detail (Example: ID=1)</a></li>
+    </ul>
+</body>
+</html>

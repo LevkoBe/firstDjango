@@ -5,7 +5,7 @@ urlpatterns = [
     path("hello/", views.sayHello),
     path("img/", views.sendIMG),
     path("json/", views.sendJSON),
-    path("/", views.sendHTML),
+    path("", views.sendHTML),
     path("html/", views.sendHTML),
 
     path("crud/", views.handleCrud),
