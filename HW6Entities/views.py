@@ -9,13 +9,13 @@ from .models import Task
 
 
 def main_page(request):
-    return render(request, '../../HW6Entities/templates/home.html')  # question: why?
+    return render(request, 'home.html')  # question: why?
 
 
 def render_tasks(request):
     if request.method == 'GET':
         tasks = Task.objects.all()
-        return render(request, '../../HW6Entities/templates/entities.html', {'entities': tasks})
+        return render(request, 'entities.html', {'entities': tasks})
 
     elif request.method == 'POST':
         new_task = Task.objects.create(

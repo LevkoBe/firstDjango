@@ -5,9 +5,12 @@ from django.views.decorators.csrf import csrf_exempt
 import os
 import json
 
+
 def getSmth(request):
     data = {'message': 'GET request received'}
     return JsonResponse(data)
+
+
 def postSmth(request):
     try:
         data = json.loads(request.body)
@@ -15,13 +18,16 @@ def postSmth(request):
         return JsonResponse(data)
     except json.JSONDecodeError:
         return JsonResponse({'error': 'Invalid JSON data received'}, status=400)
+
+
 def putSmth(request):
     data = {'message': 'PUT request received'}
     return JsonResponse(data)
+
+
 def deleteSmth(request, *args, **kwargs):
     data = {'message': 'DELETE request received'}
     return JsonResponse(data)
-
 
 
 @csrf_exempt
@@ -43,7 +49,9 @@ def sendHTML(request):
 
 
 def sendIMG(request):
-    return FileResponse(open('C:\\Users\\1levk\\PycharmProjects\\djangoPrj\\firstDjango\\static\\images\\img.png', 'rb'), content_type='image/png')
+    return FileResponse(
+        open('C:\\Users\\1levk\\PycharmProjects\\djangoPrj\\firstDjango\\static\\images\\img.png', 'rb'),
+        content_type='image/png')
 
 
 def sendJSON(request):
